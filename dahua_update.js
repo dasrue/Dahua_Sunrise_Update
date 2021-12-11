@@ -109,7 +109,7 @@ https.get("https://api.sunrise-sunset.org/json?lat=" + lat + "&lng=" + lng + "&f
 		if(json_resp.status === "OK") {
 			var tw_begin = new Date(json_resp.results.civil_twilight_begin);
 			var tw_end = new Date(json_resp.results.civil_twilight_end);
-			var range_str = tw_begin.getHours() + ":" + tw_begin.getMinutes() + ":00-" + tw_end.getHours() + ":" + tw_end.getMinutes() + ":00";
+			var range_str = tw_begin.getHours() + ":" + ("0" + tw_begin.getMinutes()).slice(-2) + ":00-" + tw_end.getHours() + ":" + ("0" + tw_end.getMinutes()).slice(-2) + ":00";
 			console.log("OK! New range: " + range_str);
 			
 			// Update cameras
